@@ -1,0 +1,1 @@
+# task5-k8s-minikube-deployment
