@@ -28,3 +28,19 @@ Deploy and manage applications locally using Kubernetes with Minikube.
 1. Start Minikube:  
    ```bash
    minikube start --driver=none
+
+**Apply deployment and service YAMLs:**
+
+kubectl apply -f deployment.yaml  
+kubectl apply -f service.yaml
+
+**Check pods and services:**
+kubectl get pods  
+kubectl get svc
+
+**Scale deployment (example to 3 replicas):**
+kubectl scale deployment nginx-deployment --replicas=3
+
+**View logs:**
+kubectl logs <pod-name>
+
