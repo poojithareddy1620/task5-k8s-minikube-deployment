@@ -1,46 +1,29 @@
-# Kubernetes Minikube Deployment
+# Kubernetes Minikube Deployment - Task 5
 
 ## Objective
-Deploy and manage applications locally using Kubernetes with Minikube.
+Deploy and manage a sample Nginx application using Kubernetes on Minikube (Amazon Linux EC2 instance).
 
 ## Tools Used
 - Minikube
 - kubectl
 - Docker
+- Amazon Linux EC2
 
-## Steps Completed
-1. Installed and started Minikube cluster locally on Amazon Linux EC2 instance.
-2. Created a `deployment.yaml` file to deploy a sample Nginx application.
-3. Created a `service.yaml` file to expose the application using NodePort.
-4. Used `kubectl` commands to:
-   - Deploy the app (`kubectl apply -f deployment.yaml`)
-   - Expose the app (`kubectl apply -f service.yaml`)
-   - Verify pods and services (`kubectl get pods`, `kubectl get svc`)
-5. Scaled the deployment using `kubectl scale`.
-6. Checked logs of pods with `kubectl logs`.
+## Setup Instructions
 
-## Outcome
-- Gained hands-on experience with Kubernetes basics: deployments, services, scaling, and pod logs.
-- Understood how Minikube works to create a local Kubernetes environment.
-- Learned to expose apps using NodePort for external access.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/poojithareddy1620/task5-k8s-minikube-deployment.git
+cd task5-k8s-minikube-deployment
 
-## How to Run
-1. Start Minikube:  
-   ```bash
-   minikube start --driver=none
+**Apply Kubernetes YAML Files**
 
-**Apply deployment and service YAMLs:**
-
-kubectl apply -f deployment.yaml  
+kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 
-**Check pods and services:**
-kubectl get pods  
+**Verify Deployment and Service**
+kubectl get pods
 kubectl get svc
 
-**Scale deployment (example to 3 replicas):**
-kubectl scale deployment nginx-deployment --replicas=3
-
-**View logs:**
-kubectl logs <pod-name>
-
+**Access the App**
+http://184.72.107.185:30080/
