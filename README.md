@@ -26,4 +26,5 @@ kubectl get pods
 kubectl get svc
 
 **Access the App**
+
 http://184.72.107.185:30080/
